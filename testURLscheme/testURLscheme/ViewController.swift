@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         alBtn.isEnabled = UIApplication.shared.canOpenURL(URL.init(string: "alipay://")!)
         openPhone.isEnabled = UIApplication.shared.canOpenURL(URL.init(string: "tel://10086")!)
         sendMsgBtn.isEnabled = UIApplication.shared.canOpenURL(URL.init(string: "sms://10086")!)
-        safariBtn.isEnabled = UIApplication.shared.canOpenURL(URL.init(string: "http://www.520it.com")!)
+        safariBtn.isEnabled = UIApplication.shared.canOpenURL(URL.init(string: "https://github.com/DwightChan")!)
         
         
     }
@@ -56,14 +56,36 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
 }
 
 extension ViewController {
+    // 招商银行
+    @IBAction func zs(_ sender: UIButton) {
+        // cmbmobilebank://
+        UIApplication.shared.open(NSURL.init(string: "cmbmobilebank://")! as URL, options: ["name": "123"]) { (flag) in
+            print("flage:\(flag)")
+        }
+    }
+    // 浦发银行
+    @IBAction func pf(_ sender: UIButton) {
+        //wx1cb534bb13ba3dbd://
+        UIApplication.shared.open(NSURL.init(string: "wx1cb534bb13ba3dbd://")! as URL, options: ["name": "123"]) { (flag) in
+            print("flage:\(flag)")
+        }
+        
+    }
+    //  支付宝
+    @IBAction func al(_ sender: UIButton) {
+        // alipay://
+        UIApplication.shared.open(NSURL.init(string: "alipay://")! as URL, options: ["name": "123"]) { (flag) in
+            print("flage:\(flag)")
+        }
+    }
     // 建设银行
     @IBAction func wx(_ sender: UIButton) {
         //wx2654d9155d70a468://
         UIApplication.shared.open(NSURL.init(string: "wx2654d9155d70a468://")! as URL, options: ["name": "123"]) { (flag) in
-            
             print("flage:\(flag)")
         }
     }
@@ -73,32 +95,40 @@ extension ViewController {
         UIApplication.shared.open(NSURL.init(string: "com.icbc.iphoneclient://")! as URL, options: ["name": "123"]) { (flag) in
             print("flage:\(flag)")
         }
-
     }
-    // 浦发银行
-    @IBAction func pf(_ sender: UIButton) {
-         //wx1cb534bb13ba3dbd://
-        UIApplication.shared.open(NSURL.init(string: "wx1cb534bb13ba3dbd://")! as URL, options: ["name": "123"]) { (flag) in
+    @IBAction func weChatBtnClick(_ sender: UIButton) {
+        UIApplication.shared.open(NSURL.init(string: "weixin://")! as URL, options: ["name": "123"]) { (flag) in
             print("flage:\(flag)")
         }
-
     }
-    // 招商银行
-    @IBAction func zs(_ sender: UIButton) {
-        // cmbmobilebank://
-        UIApplication.shared.open(NSURL.init(string: "cmbmobilebank://")! as URL, options: ["name": "123"]) { (flag) in
+    @IBAction func qqBtnClick(_ sender: UIButton) {
+        UIApplication.shared.open(NSURL.init(string: "mqq://")! as URL, options: ["name": "123"]) { (flag) in
             print("flage:\(flag)")
         }
-
     }
-    //  支付宝
-    @IBAction func al(_ sender: UIButton) {
-        // alipay://
-        UIApplication.shared.open(NSURL.init(string: "alipay://")! as URL, options: ["name": "123"]) { (flag) in
+    @IBAction func sinaBtnClick(_ sender: UIButton) {
+        UIApplication.shared.open(NSURL.init(string: "sinaweibo://")! as URL, options: ["name": "123"]) { (flag) in
             print("flage:\(flag)")
         }
-
     }
+    @IBAction func callPhoneClick(_ sender: UIButton) {
+        UIApplication.shared.open(NSURL.init(string: "tel://10086")! as URL, options: ["name": "123"]) { (flag) in
+            print("flage:\(flag)")
+        }
+    }
+    @IBAction func sendMessageBtnClick(_ sender: UIButton) {
+        UIApplication.shared.open(NSURL.init(string: "sms://10086")! as URL, options: ["name": "123"]) { (flag) in
+            print("flage:\(flag)")
+        }
+    }
+    @IBAction func openSafariBtnClick(_ sender: UIButton) {
+        // https://github.com/DwightChan
+        UIApplication.shared.open(NSURL.init(string: "https://github.com/DwightChan")! as URL, options: ["name": "123"]) { (flag) in
+            print("flage:\(flag)")
+        }
+    }
+
+    
 }
 
 
